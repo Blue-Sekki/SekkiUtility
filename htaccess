@@ -1,0 +1,48 @@
+RewriteEngine on
+
+# Remove .html extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [QSA,L]
+
+# Redirect /Pages/Farming/farming to /Farming
+RewriteRule ^Events$ /Pages/Events/events [L]
+RewriteRule ^Elections$ /Pages/Elections/elections [L]
+RewriteRule ^Minions$ /Pages/Minions/minions [L]
+RewriteRule ^Jerry$ /Pages/Jerry/jerry [L]
+RewriteRule ^Farming$ /Pages/Farming/farming [L]
+RewriteRule ^Mining$ /Pages/Mining/mining [L]
+RewriteRule ^Corpse$ /Pages/Corpse/corpse [L]
+RewriteRule ^Powerstone$ /Pages/Powerstone/powerstones [L]
+RewriteRule ^Info$ /Pages/Issues/issues [L]
+RewriteRule ^Sekki$ /Images/normal.jpg [L]
+
+RewriteRule ^Rat$ /Images1/Rat.jpg [L]
+RewriteRule ^Rng$ /Images1/Rngvictim.webp [L]
+RewriteRule ^Island$ /Images1/Island.png [L]
+RewriteRule ^Kills$ /Images1/Kills.webp [L]
+RewriteRule ^Kuudere$ /Images1/Kuudere.jpg [L]
+RewriteRule ^OldCalc$ /Images1/Oldcalc.webp [L]
+RewriteRule ^Playtime$ /Images1/Playtime.png [L]
+RewriteRule ^RealRats$ /Images1/Realrats.png [L]
+RewriteRule ^Senither$ /Images1/Senither.webp [L]
+RewriteRule ^Coins$ /Images1/Slime.PNG [L]
+RewriteRule ^Slug$ /Images1/Slug.webp [L]
+RewriteRule ^Spoon$ /Images1/Spoon.png [L]
+RewriteRule ^Term$ /Images1/Term.webp [L]
+RewriteRule ^Handle$ /Images1/Handle.webp [L]
+RewriteRule ^TopKills$ /Images1/Topkills.webp [L]
+RewriteRule ^Traps$ /Images1/Traps.png [L]
+RewriteRule ^Coops$ /Images1/Coops.webp [L]
+RewriteRule ^Cake$ /Images1/Cake.JPG [L]
+RewriteRule ^Salter$ /Images1/Salter.png [L]
+RewriteRule ^Castoria$ /Images1/Castoria.jpg [L]
+RewriteRule ^Mashu$ /Images1/Mashu.PNG [L]
+RewriteRule ^Tsukasa$ /Images1/Tsukasa.png [L]
+RewriteRule ^Moon$ /Images1/Moon.png [L]
+RewriteRule ^Wallpaper$ /Images1/Wallpaper.jpg [L]
+
+# Redirect .html URLs to non-.html URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
